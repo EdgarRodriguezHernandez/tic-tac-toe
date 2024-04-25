@@ -44,8 +44,8 @@ body {
   padding: 8px 12px;
   margin: 25px;
   background: transparent;
-  border: 2px solid #eee;
-  color: #eee;
+  border: 2px solid #ab58ff;
+  color: #eeeeee;
   width: 100px;
   border-radius: 5px;
   transition: 0.2s;
@@ -54,8 +54,8 @@ body {
 }
 
 .board button:hover {
-  background: #eee;
-  color: #222;
+  background: #bb00ff;
+  color: #eee;
 }
 
 .board .game {
@@ -128,4 +128,10 @@ body {
   place-items: center;
   cursor: pointer;
   font-size: 48px;
+}
+
+.title{
+  background: linear-gradient(45deg, #ff00ff, #6f00ff, #00ffff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

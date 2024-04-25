@@ -1,15 +1,14 @@
-
-//Board
-export const Square = ({children, isSelected, updateBoard, index}) => {
-    const className = `square ${isSelected ? 'is-selected' : ''}`
-   
-    const handleClick = () => {
-    updateBoard(index)
-    }
+// Board
+export const Square = ({ children, isSelected, updateBoard, index }) => {
+  const className = `square ${isSelected ? 'is-selected' : ''}`;
   
-    return (
-      <div onClick={handleClick} className={className}>
+  const handleClick = () => {
+    updateBoard(index);
+  };
+
+  return (
+    <div onClick={handleClick} className={className}>
       {children}
-      </div>
-    )
-  }
+    </div>
+  );
+};

@@ -1,44 +1,8 @@
-
 import { useState } from 'react';
 import confetti from "canvas-confetti"
-import './App.css'
-
-const TURNS = {
-  X: 'X',
-  O: 'O'
-}
-
-
-//Board
-const Square = ({children, isSelected, updateBoard, index}) => {
-  const className = `square ${isSelected ? 'is-selected' : ''}`
- 
-  const handleClick = () => {
-  updateBoard(index)
-  }
-
-  return (
-    <div onClick={handleClick} className={className}>
-    {children}
-    </div>
-  )
-}
-
-const Winner_Combos = [
-/*TODO: We could simplify the code more, creating abc position conditionals*/
-//horizontal
-[0, 1, 2],
-[3, 4, 5],
-[6, 7, 8],
-//vertical
-[0, 3, 6],
-[1, 4, 7],
-[2, 5, 8],
-//cross
-[0, 4, 8],
-[2, 4, 6]
-]
-
+import { Square } from './components/Square.jsx';
+import { TURNS, Winner_Combos } from './constants.js';
+import { WinnerMesage } from './components/WinnerMesage.jsx';
 
 
 function App() {
@@ -128,27 +92,7 @@ function App() {
 
       <button onClick={resetGame}>New game</button>
 
-      {winner !== null &&(
-        <section className="winner">
-          <div className="text">
-            <h2>
-              {winner === false
-              ? 'No body wins' : 'Wins '}
-            </h2>
-
-
-            <header className='win'>
-              {winner && <Square>{winner}</Square>}
-            </header>
-
-            <footer>
-              <button onClick={resetGame}>New game</button>
-            </footer>
-          </div>
-        </section>
-      )}
-
-     
+      <WinnerMesage winner={winner} resetGame={resetGame} />
     </main>
   )
 }

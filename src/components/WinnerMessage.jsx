@@ -1,6 +1,6 @@
 export const WinnerMessage = ({ winner, resetGame }) => {
-  if (!winner) {
-    return null; // No renderizar el componente si no hay un ganador
+  if (winner === undefined || winner === null) {
+    return null;
   }
 
   const winnerText = winner === false ? 'No body wins' : `Wins ${winner}`;
